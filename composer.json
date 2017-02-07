@@ -1,0 +1,49 @@
+{
+  "name": "potatopowered/dynamic-comments",
+  "description": "The dynamic-comments repository will hopefully not break",
+  "type": "cakephp-plugin",
+  "keywords": [
+    "dynamic-comments",
+    "CakePHP",
+    "Potato Powered Software"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Blake Sutton",
+      "email": "sutton.blake@gmail.com",
+      "role": "Lead Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.16",
+    "cakephp/cakephp": "~3.0",
+    "potatopowered/dynamic-types": "dev-development",
+    "cakephp/migrations": "^1.6"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "cakephp/cakephp-codesniffer": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "DynamicComments\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DynamicComments\\Test\\": "tests",
+      "DynamicTypes\\Test\\": "vendor\\potatopowered\\dynamic-types\\tests"
+
+    }
+  },
+  "scripts": {
+    "check": [
+      "@test",
+      "@cs-check"
+    ],
+    "cs-check": "vendor/bin/phpcs --colors -p --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests",
+    "cs-fix": "vendor/bin/phpcbf --colors --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests",
+    "test": "vendor/bin/phpunit --colors=always"
+  }
+}
