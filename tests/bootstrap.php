@@ -6,10 +6,10 @@
  * For full copyright and license information, please see the LICENSE
  * Redistributions of files must retain the above copyright notice.
  *
- * @author      Blake Sutton <blake@potatopowered.net>
- * @copyright   Copyright (c) Potato Powered Software
- * @link        http://potatopowered.net
- * @license     http://www.opensource.org/licenses/mit-license.php MIT License
+ * @author    Blake Sutton <blake@potatopowered.net>
+ * @copyright Copyright (c) Potato Powered Software
+ * @link      http://potatopowered.net
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
@@ -43,7 +43,9 @@ mb_internal_encoding('UTF-8');
 
 Configure::write('debug', true);
 
-Configure::write('App', [
+Configure::write(
+    'App',
+    [
     'namespace' => 'App',
     'encoding' => 'UTF-8',
     'base' => false,
@@ -59,13 +61,18 @@ Configure::write('App', [
         'plugins' => [APP . 'Plugin' . DS],
         'templates' => [APP . 'Template' . DS]
     ]
-]);
+    ]
+);
 
-Configure::write('Session', [
+Configure::write(
+    'Session',
+    [
     'defaults' => 'php'
-]);
+    ]
+);
 
-Cache::config([
+Cache::config(
+    [
     '_cake_core_' => [
         'engine' => 'File',
         'prefix' => 'cake_core_',
@@ -81,7 +88,8 @@ Cache::config([
         'prefix' => 'default_',
         'serialize' => true
     ]
-]);
+    ]
+);
 
 // Ensure default test connection is defined
 if (!getenv('db_class')) {
@@ -89,7 +97,9 @@ if (!getenv('db_class')) {
     putenv('db_dsn=sqlite::memory:');
 }
 
-ConnectionManager::config('test', [
+ConnectionManager::config(
+    'test',
+    [
     'className' => 'Cake\Database\Connection',
     'driver' => getenv('db_class'),
     'dsn' => getenv('db_dsn'),
@@ -97,9 +107,11 @@ ConnectionManager::config('test', [
     'username' => getenv('db_login'),
     'password' => getenv('db_password'),
     'timezone' => 'UTC'
-]);
+    ]
+);
 
-Log::config([
+Log::config(
+    [
     'debug' => [
         'engine' => 'Cake\Log\Engine\FileLog',
         'levels' => ['notice', 'info', 'debug'],
@@ -110,6 +122,7 @@ Log::config([
         'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
         'file' => 'error',
     ]
-]);
+    ]
+);
 
 Plugin::load('DynamicComments', ['path' => ROOT]);

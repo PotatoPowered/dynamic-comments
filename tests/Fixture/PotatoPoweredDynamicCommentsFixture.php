@@ -6,10 +6,10 @@
  * For full copyright and license information, please see the LICENSE
  * Redistributions of files must retain the above copyright notice.
  *
- * @author      Blake Sutton <blake@potatopowered.net>
- * @copyright   Copyright (c) Potato Powered Software
- * @link        http://potatopowered.net
- * @license     http://www.opensource.org/licenses/mit-license.php MIT License
+ * @author    Blake Sutton <blake@potatopowered.net>
+ * @copyright Copyright (c) Potato Powered Software
+ * @link      http://potatopowered.net
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 namespace DynamicComments\Test\Fixture;
 

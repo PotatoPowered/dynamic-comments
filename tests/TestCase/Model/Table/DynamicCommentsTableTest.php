@@ -6,10 +6,10 @@
  * For full copyright and license information, please see the LICENSE
  * Redistributions of files must retain the above copyright notice.
  *
- * @author      Blake Sutton <blake@potatopowered.net>
- * @copyright   Copyright (c) Potato Powered Software
- * @link        http://potatopowered.net
- * @license     http://www.opensource.org/licenses/mit-license.php MIT License
+ * @author    Blake Sutton <blake@potatopowered.net>
+ * @copyright Copyright (c) Potato Powered Software
+ * @link      http://potatopowered.net
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 namespace DynamicComments\Test\TestCase\Model\Table;
 
@@ -69,16 +69,16 @@ class DynamicCommentsTableTest extends TestCase
     public function testInitialization()
     {
         // expected values
-        $expected_result = 1;
+        $expectedResult = 1;
 
         // data setup and fetch
         $comment = $this->DynamicComments->get(1);
         $this->assertInstanceOf('DynamicComments\Model\Entity\DynamicComment', $comment);
 
         //assertions
-        $this->assertEquals($expected_result, $comment->id);
-        $this->assertEquals($expected_result, $comment->dynamic_type_id);
-        $this->assertEquals($expected_result, $comment->dynamic_type_key);
+        $this->assertEquals($expectedResult, $comment->id);
+        $this->assertEquals($expectedResult, $comment->dynamic_type_id);
+        $this->assertEquals($expectedResult, $comment->dynamic_type_key);
     }
 
     /**
@@ -89,10 +89,10 @@ class DynamicCommentsTableTest extends TestCase
     public function testCreation()
     {
         // expected values
-        $expected_result = 2;
+        $expectedResult = 2;
 
         // data setup and fetch
         $comment = $this->DynamicComments->newEntity();
-        $this->assertEquals($expected_result, $this->DynamicComments->getType("DynamicComments"));
+        $this->assertEquals($expectedResult, $this->DynamicComments->getType("DynamicComments"));
     }
 }
